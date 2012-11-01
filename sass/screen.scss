@@ -1,6 +1,9 @@
 /* Centralized Style imports */
 @import "compass/css3";
 @import "compass/reset";
+@import "mixins/variables";
+@import "mixins/responsive";
+@import "mixins/icons";
 
 //----------------------------------------------------------------
 //You may want to use Twitter Bootstrap all-together or by module

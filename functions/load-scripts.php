@@ -1,6 +1,6 @@
 <?php 
 //register all scripts here
-add_action('init', 'register_scripts');
+add_action('wp_enqueue_scripts', 'register_scripts');
 function register_scripts () {
 	$bs = get_bloginfo('template_directory') . '/js/vendor/bootstrap/bootstrap-';
 	wp_register_script('bootstrap-affix', $bs . 'affix.js', array('jquery'), false, true);
@@ -18,7 +18,7 @@ function register_scripts () {
 	wp_register_script('bootstrap-typeahead', $bs . 'typeahead.js', array('jquery'), false, true);
 	
 	wp_register_style('screen-css', get_bloginfo('template_directory') . '/css/screen.css');
-	wp_register_style('print-css', get_bloginfo('template_directory') . '/css/screen.css', array(), false, 'print');
+	wp_register_style('print-css', get_bloginfo('template_directory') . '/css/print.css', array(), false, 'print');
 	
 	wp_enqueue_style('screen-css');
 	wp_enqueue_style('print-css');
