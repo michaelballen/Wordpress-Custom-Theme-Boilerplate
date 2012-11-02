@@ -1,7 +1,7 @@
 <?php 
 //functions (hooks at bottom)
 function logo_header () {
-	$str = '<div class="logo">';
+	$str = '<div class="logo"><a href="' . site_url() . '"';
 	if (is_front_page()) {
 		$str .= '<h1>';
 	} else {
@@ -13,7 +13,7 @@ function logo_header () {
 	} else {
 		$str .= '</div>';
 	}
-	$str .= '</div>';
+	$str .= '</a></div>';
 	echo $str;
 }
 
@@ -23,5 +23,11 @@ function change_permalinks() {
     $wp_rewrite->flush_rules();
 }
 
+function replace_excerpt($content) {
+       return str_replace('[...]', '<a href="'. get_permalink() .'">' . __('Read More') . '</a>', $content);
+}
+
+
 //hooks
 add_action('init', 'change_permalinks');
+add_filter('the_excerpt', 'replace_excerpt');
