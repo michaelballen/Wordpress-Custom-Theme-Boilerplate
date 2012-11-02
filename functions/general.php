@@ -1,19 +1,19 @@
 <?php 
 //functions (hooks at bottom)
 function logo_header () {
-	$str = '<div class="logo"><a href="' . site_url() . '"';
+	$str = '<div class="logo">';
 	if (is_front_page()) {
 		$str .= '<h1>';
 	} else {
 		$str .= '<div>';
 	}
-	$str .= get_bloginfo('title');
+	$str .= '<a href="' . site_url() . '">' . get_bloginfo('title') . '</a>';
 	if (is_front_page()) {
 		$str .= '</h1>';
 	} else {
 		$str .= '</div>';
 	}
-	$str .= '</a></div>';
+	$str .= '</div>';
 	echo $str;
 }
 
