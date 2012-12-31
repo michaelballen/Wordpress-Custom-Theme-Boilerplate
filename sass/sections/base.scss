@@ -2,6 +2,25 @@
 	@include box-sizing(border-box);
 }
 
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+	&:before {
+	    content: "";
+	    display: block;
+	    width: 0;
+	    height: 100%;
+	}
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
 *//
 FLOATS
 *//

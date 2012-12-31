@@ -1,19 +1,28 @@
 /* Centralized Style imports */
+
+//----------------------------------------------------------------
+// -> You may want to use Twitter Bootstrap all-together or by module
+// -> Also, feel free to add other frameworks to vendor directory,
+// -> But, these are better handled by centralized importing from a single
+//    directory on your machine using Codekit or something like that
+//----------------------------------------------------------------
+
+@import "vendor/bootstrap/modules/_variables";
+@import "vendor/bootstrap/modules/_mixins";
+@import "vendor/bootstrap/modules/_buttons";
+
+
 @import "compass/css3";
 @import "compass/reset";
 @import "mixins/variables";
 @import "mixins/responsive";
-@import "mixins/icons";
+//@import "mixins/icons"; //you have to have your icons set up for these mixins to work
 
-//----------------------------------------------------------------
-//You may want to use Twitter Bootstrap all-together or by module
-//Also, feel free to add other frameworks to vendor directory
-//----------------------------------------------------------------
 
-//@import "bootstrap/_bootstrap";
-//@import "bootstrap/_bootstrap-responsive";
 
 @import "sections/base";
+@import "sections/header";
+@import "sections/footer";
 
 //----------------------------------------------------------------
 //Make sure to set Compass to export minified css for production
